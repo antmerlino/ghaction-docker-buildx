@@ -59,6 +59,15 @@ Try using buildx with --push to local registry
 
 ![buildx-local-registry](https://github.com/antmerlino/ghaction-docker-buildx/workflows/buildx-local-registry/badge.svg)
 
+```
+ #7 pushing layers 0.0s done
+#7 ERROR: failed to do request: Head http://localhost:5000/v2/container-1/blobs/sha256:b6a83d81d1f4f942d37e1f17195d9c519969ed3040fc3e444740b884e44dec33: dial tcp 127.0.0.1:5000: connect: connection refused
+------
+ > exporting to image:
+------
+failed to solve: rpc error: code = Unknown desc = failed to do request: Head http://localhost:5000/v2/container-1/blobs/sha256:b6a83d81d1f4f942d37e1f17195d9c519969ed3040fc3e444740b884e44dec33: dial tcp 127.0.0.1:5000: connect: connection refused
+```
+
 # buildx-push-action Workflow
 
 Try using the buildx-push-action github action.
