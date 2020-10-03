@@ -1,3 +1,3 @@
 FROM ubuntu
-RUN apt install vscode
+RUN apt install nodejs
 
