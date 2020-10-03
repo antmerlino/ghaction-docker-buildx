@@ -1,4 +1,4 @@
-name: Build Baseline
+name: build-baseline
 on:
   push:
 jobs:

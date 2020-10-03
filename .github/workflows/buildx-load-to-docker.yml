@@ -1,4 +1,4 @@
-name: Load to Docker
+name: buildx
 on:
   push:
 jobs:

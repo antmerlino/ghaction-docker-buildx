@@ -1,4 +1,4 @@
-name: Local Registry
+name: buildx-local-registry
 on:
   push:
 jobs:
