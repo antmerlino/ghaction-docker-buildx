@@ -3,7 +3,7 @@ on:
   push:
 
 jobs:
-  path-context:
+  build-push-action:
     runs-on: ubuntu-latest
     steps:
       -
@@ -21,7 +21,6 @@ jobs:
         with:
           context: .
           file: ./container-1/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
           push: false
           tags: container-1:latest
       -
