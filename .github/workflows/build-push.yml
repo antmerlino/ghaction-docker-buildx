@@ -15,6 +15,10 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: |
+            image=moby/buildkit:master
+            network=host
       -
         name: Build container-1
         uses: docker/build-push-action@v2
@@ -28,7 +32,7 @@ jobs:
         name: Docker Inspect
         run: |
           docker image ls
-          docker image inspect container-1
+          docker image inspect antmerl/container-1
       -
         name: Build container-2
         uses: docker/build-push-action@v2
@@ -38,4 +42,3 @@ jobs:
           push: false
           load: true
           tags: antmerl/container-2:latest
-

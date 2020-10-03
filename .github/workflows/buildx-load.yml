@@ -13,6 +13,8 @@ jobs:
             install: true
             driver-opts: |
               network=host
+              image=moby/buildkit:master
+              network=host
 
         - name: Cache Docker layers
           uses: actions/cache@v2
