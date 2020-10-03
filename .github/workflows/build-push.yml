@@ -23,7 +23,7 @@ jobs:
           file: ./container-1/Dockerfile
           push: false
           load: true
-          tags: container-1:latest
+          tags: antmerl/container-1:latest
       - 
         name: Docker Inspect
         run: |
@@ -37,5 +37,5 @@ jobs:
           file: ./container-2/Dockerfile
           push: false
           load: true
-          tags: container-2:latest
+          tags: antmerl/container-2:latest
 
