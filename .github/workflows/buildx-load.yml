@@ -26,7 +26,7 @@ jobs:
 
         - name: Build container1
           run: 
-            docker build -t antmerl/container-1:latest
+            docker build -t container-1:latest
                 -f container-1/Dockerfile
                 --cache-from "type=local,src=/tmp/.buildx-cache"
                 --cache-to "type=local,dest=/tmp/.buildx-cache"
@@ -34,7 +34,7 @@ jobs:
 
         - name: Build container2
           run: 
-            docker build -t antmerl/container-2:latest
+            docker build -t container-2:latest
                 -f container-2/Dockerfile
                 --cache-from "type=local,src=/tmp/.buildx-cache"
                 --cache-to "type=local,dest=/tmp/.buildx-cache"
