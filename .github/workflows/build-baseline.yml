@@ -1,0 +1,16 @@
+name: Build Baseline
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+
+        - name: Build container1
+          run: 
+            docker build -t container-1:latest -f container-1/Dockerfile .
+
+        - name: Build container2
+          run: 
+            docker build -t container-2:latest -f container-2/Dockerfile .
