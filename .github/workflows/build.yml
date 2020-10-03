@@ -1,0 +1,49 @@
+name: Build
+on:
+  push:
+jobs:
+  local-registry:
+    runs-on: ubuntu-latest
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
+    steps:
+      - name: "Dummy Step"
+        run: echo "Dummy Step"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v1
+          with:
+            install: true
+            driver-opts: |
+              network=host
+
+        - name: Cache Docker layers
+          uses: actions/cache@v2
+          with:
+            path: /tmp/.buildx-cache
+            key: ${{ runner.os }}-buildx-${{ github.sha }}
+            restore-keys: |
+              ${{ runner.os }}-buildx-
+
+        - name: Build container1
+          run: |
+            docker build -t localhost:5000/container-1:latest
+                -f container-1/Dockerfile
+                --cache-from "type=local,src=/tmp/.buildx-cache"
+                --cache-to "type=local,dest=/tmp/.buildx-cache"
+                --push .
+
+        - name: Build container2
+          run: |
+            ${Docker_EXE} build -t localhost:5000/container-2:latest
+                -f container-2/Dockerfile
+                --cache-from "type=local,src=/tmp/.buildx-cache"
+                --cache-to "type=local,dest=/tmp/.buildx-cache"
+                --push .
