@@ -1,4 +1,4 @@
-name: ci
+name: build-push-action
 on:
   push:
 
@@ -30,7 +30,6 @@ jobs:
         with:
           context: .
           file: ./container-2/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
           push: false
           tags: container-2:latest
 
