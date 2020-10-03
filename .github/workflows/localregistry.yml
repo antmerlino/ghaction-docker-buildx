@@ -1,4 +1,4 @@
-name: Build
+name: Local Registry
 on:
   push:
 jobs:
