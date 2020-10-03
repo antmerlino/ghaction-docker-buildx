@@ -24,6 +24,11 @@ jobs:
           push: false
           load: true
           tags: container-1:latest
+      - 
+        name: Docker Inspect
+        run: |
+          docker image ls
+          docker image inspect container-1
       -
         name: Build container-2
         uses: docker/build-push-action@v2
