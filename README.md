@@ -6,13 +6,15 @@ The baseline building of the containers using normal docker build.
 
 ## Result
 
- ![Build Baseline](https://github.com/antmerlino/ghaction-docker-buildx/workflows/Build%20Baseline/badge.svg)
+![build-baseline](https://github.com/antmerlino/ghaction-docker-buildx/workflows/build-baseline/badge.svg)
+
 
 # buildx-load Workflow
 Try using buildx with --load 
 
 ## Result
-![Load to Docker](https://github.com/antmerlino/ghaction-docker-buildx/workflows/Load%20to%20Docker/badge.svg)
+
+![buildx](https://github.com/antmerlino/ghaction-docker-buildx/workflows/buildx/badge.svg)
 
 ```
 Run docker build -t container-2:latest -f container-2/Dockerfile --cache-from "type=local,src=/tmp/.buildx-cache" --cache-to "type=local,dest=/tmp/.buildx-cache" --load .
@@ -44,13 +46,13 @@ failed to solve: rpc error: code = Unknown desc = failed to load cache key: pull
 Error: Process completed with exit code 1.
 ```
 
-# buildx-localregistry Workflow
+# buildx-local-registry Workflow
 
 Try using buildx with --push to local registry
 
 ## Result
 
-![Local Registry](https://github.com/antmerlino/ghaction-docker-buildx/workflows/Local%20Registry/badge.svg)
+![buildx-local-registry](https://github.com/antmerlino/ghaction-docker-buildx/workflows/buildx-local-registry/badge.svg)
 
 # buildx-push-action Workflow
 
@@ -60,6 +62,7 @@ This fails similarly to buildx-load.yml
 ## Result
 
 ![build-push-action](https://github.com/antmerlino/ghaction-docker-buildx/workflows/build-push-action/badge.svg)
+
   
 ```
 
