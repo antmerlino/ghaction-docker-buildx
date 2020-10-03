@@ -22,6 +22,7 @@ jobs:
           context: .
           file: ./container-1/Dockerfile
           push: false
+          load: true
           tags: container-1:latest
       -
         name: Build container-2
@@ -30,5 +31,6 @@ jobs:
           context: .
           file: ./container-2/Dockerfile
           push: false
+          load: true
           tags: container-2:latest
 
