@@ -2,18 +2,13 @@ name: buildx-local-registry
 on:
   push:
 jobs:
-  local-registry:
+  build:
     runs-on: ubuntu-latest
     services:
       registry:
         image: registry:2
         ports:
           - 5000:5000
-    steps:
-      - name: "Dummy Step"
-        run: echo "Dummy Step"
-  build:
-    runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
 
