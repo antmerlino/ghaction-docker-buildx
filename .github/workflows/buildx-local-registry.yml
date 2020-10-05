@@ -35,12 +35,12 @@ jobs:
 
         - name: Build container1
           run: 
-            docker build -t localhost:5000/container-1:latest
+            docker build -t localhost:5000/user/container-1:latest
                 -f container-1/Dockerfile
                 --push .
 
         - name: Build container2
           run: 
-            docker build -t localhost:5000/container-2:latest
+            docker build -t localhost:5000/user/container-2:latest
                 -f container-2/Dockerfile
                 --push .
